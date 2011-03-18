@@ -108,7 +108,7 @@ module Resque
 
       def poll
         if @polling
-          text = "Last Updated: #{Time.now.strftime("%H:%M:%S")}"
+          text = "Last Updated: #{Time.now.utc.strftime("%H:%M:%S")}"
         else
           text = "<a href='#{url(request.path_info)}.poll' rel='poll'>Live Poll</a>"
         end
